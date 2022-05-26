@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>担当者変更</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 0 auto;
+      }
+
+      td,
+      th {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      th {
+        color: #fff;
+        background: #005ab3;
+      }
+
+      table tr td:nth-child(odd) {
+        background: #e6f2ff;
+      }
+
+      fieldset {
+        max-width: 80%;
+        margin: 1em auto;
+        border: 1px solid #005ab3;
+      }
+      input[type="text"] {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="\trainning\99th\04_Global_Hinan\#46133">
+      <fieldset>
+        <legend>条件</legend>
+        <table>
+          <tr>
+            <th>帳票タイプ</th>
+            <td>
+              <select name="ledger" id="ledger">
+                <option value="">-</option>
+                <option value="ptc">品安表</option>
+                <option value="crf">対策要求表</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>システム内連番</th>
+            <td>
+              <input type="text" name="controlNo" value="" maxsize="12" />
+            </td>
+          </tr>
+          <tr>
+            <th>役割区分</th>
+            <td>
+              <select name="role" id="role" disabled>
+                <option value="">-</option>
+                <option value="1">打上</option>
+                <option value="2">推進</option>
+                <option value="2">クローズ</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>行動区分</th>
+            <td>
+              <select name="action" id="action" disabled>
+                <option value="">-</option>
+                <option value="1">担当者</option>
+                <option value="2">承認者</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>変更前の職番</th>
+            <td>
+              <input
+                type="text"
+                name="useridBefore"
+                value="8桁職番"
+                maxsize="8"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>変更後の職番</th>
+            <td>
+              <input
+                type="text"
+                name="useridAfter"
+                value="8桁職番"
+                maxsize="8"
+              />
+            </td>
+          </tr>
+        </table>
+        <input type="submit" name="submit" />
+      </fieldset>
+    </form>
+    <script>
+      const role = {
+        ptc: ["打上", "推進", "クローズ"],
+        crf: [
+          "購買",
+          "資源",
+          "品質",
+          "認証",
+          "E部門",
+          "設計",
+          "D部門",
+          "メーカ"
+        ]
+      };
+
+      const ledger = document.getElementById("ledger");
+      ledger.addEventListener("change", () => {
+        alert("Hello");
+      });
+      function displayDate() {
+        alert("Hello");
+      }
+    </script>
+  </body>
+</html>
